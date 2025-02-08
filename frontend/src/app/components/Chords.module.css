@@ -1,3 +1,50 @@
 .bg {
-    background-color: aqua;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.h1 {
+    text-align: center;
+    font-family: 'Libre Baskerville';
+    font-weight: 700;
+    font-size: 50px;
+    color: white;
+    margin: 5px;
+}
+
+.chords {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
+}
+
+.chord {
+    flex: 1;
+    backdrop-filter: blur(20px);
+    color: white;
+    margin: 10px;
+    border-radius: 15px;
+    font-size: 150px;
+    padding: 10px;
+}
+
+.button {
+    font-size: 20px;
+    color: white;
+    border-radius: 25px;
+    padding: 10px;
+    margin: 10px;
+    backdrop-filter: blur(20px);
+    margin: 10px;
+    transition: box-shadow 0.25s ease-in-out, transform 0.1s ease-in-out;
+}
+
+.button:hover {
+    box-shadow: 0 0 15px #ffffff; 
+}
+
+.button:active {
+    transform: scale(0.95);
 }

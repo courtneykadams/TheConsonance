@@ -54,10 +54,10 @@
     transition: box-shadow 0.25s ease-in-out, transform 0.1s ease-in-out;
 }
 
-.button:hover{
+.button:hover {
     box-shadow: 0 0 15px #ffffff; 
 }
 
-.button:active{
+.button:active {
     transform: scale(0.95);
 }
