@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Oswald:wght@200..700&family=Pirata+One&display=swap');
+
+.bg {
+    background-image: url(https://images.unsplash.com/photo-1462965326201-d02e4f455804?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.text{
+    justify-content: top;
+    height: 600px;
+}
+
+.h1 {
+    font-family: 'Libre Baskerville';
+    font-weight: 700;
+    font-size: 100px;
+    color: white;
+    padding: 10px;
+    margin: 10px;
+}
+
+.button {
+    font-size: 20px;;
+    color: white;
+    padding: 10px;
+    border-radius: 50px;
+    backdrop-filter: blur(20px);
+    margin: 10px;
+    transition: box-shadow 0.25s ease-in-out, transform 0.1s ease-in-out;
+}
+
+.button:hover{
+    box-shadow: 0 0 15px #ffffff; 
+}
+
+.button:active{
+    transform: scale(0.95);
+}
