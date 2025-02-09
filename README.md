@@ -1,4 +1,5 @@
 # TheConsonance
+By Courtney Adams and Sergio Chong
 
 TheConsonance is an innovative web application that combines the power of AI with music theory to generate custom chord progressions and discover songs with similar musical patterns.
 
