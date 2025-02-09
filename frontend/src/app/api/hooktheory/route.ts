@@ -3,8 +3,15 @@
 import { NextResponse } from 'next/server';
 
 export async function GET(request: Request) {
-  // Example chord progression in Hooktheory's format (e.g., IV → I → V → vi)
-  const chordProgression = "4,1,5,6"; // Example: F → C → G → Am
+  const url = new URL(request.url);
+  const chordProgression = url.searchParams.get('cp');
+
+  if (!chordProgression) {
+    return NextResponse.json(
+        { error: "Missing a chord progression." },
+        { status: 400 }
+    );
+}
 
   // Retrieve API token from environment variables
   const token = process.env.HOOKTHEORY_TOKEN;
@@ -16,10 +23,10 @@ export async function GET(request: Request) {
   }
 
   // Construct the URL
-  const url = `https://api.hooktheory.com/v1/trends/songs?cp=${chordProgression}`;
+  const APIurl = `https://api.hooktheory.com/v1/trends/songs?cp=${chordProgression}`;
 
   try {
-    const response = await fetch(url, {
+    const response = await fetch(APIurl, {
       method: 'GET',
       headers: {
         'Authorization': `Bearer ${token}`,
@@ -35,6 +42,7 @@ export async function GET(request: Request) {
     }
 
     const data = await response.json();
+    console.log(data);
     return NextResponse.json(data);
   } catch (error) {
     console.error("Error fetching from Hooktheory API:", error);
