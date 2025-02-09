@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Oswald:wght@200..700&family=Pirata+One&display=swap');
+
 .bg {
     display: flex;
     flex-direction: column;
@@ -24,6 +26,7 @@
 
 .button {
     backdrop-filter: blur(20px);
+    font-family: 'Libre Baskerville';
     font-size: 20px;
     color: white;
     border-radius: 25px;
@@ -46,6 +49,7 @@
 
 .homeButton {
     backdrop-filter: blur(20px);
+    font-family: 'Libre Baskerville';
     font-size: 12px;
     color: white;
     border-radius: 25px;
