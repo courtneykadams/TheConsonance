@@ -34,6 +34,8 @@ export async function GET(request: Request) {
       }
     });
 
+    console.log("Hooktheory API response:", response);
+
     if (!response.ok) {
       return NextResponse.json(
         { error: `Error fetching data, status code: ${response.status}` },
@@ -42,7 +44,7 @@ export async function GET(request: Request) {
     }
 
     const data = await response.json();
-    console.log(data);
+    console.log("Data from Hooktheory API:", data);
     return NextResponse.json(data);
   } catch (error) {
     console.error("Error fetching from Hooktheory API:", error);

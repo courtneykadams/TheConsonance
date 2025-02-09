@@ -11,8 +11,24 @@
     justify-content: center;
 }
 
+.bg::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.65); /* Transparent black overlay */
+    z-index: 0; /* Ensure it sits below the content */
+ }
+ 
+ .bg * {
+    position: relative; /* Ensure text and other elements are above the overlay */
+    z-index: 1; /* Ensure content sits in front of the overlay */
+ }
+
+
 .text {
-    background-color: rgba(0, 0, 0, 0.5);
     border-radius: 50px;
     margin: 20px;
     padding: 20px;
@@ -24,7 +40,7 @@
 .h2 {
     text-align: center;
     font-family: 'Libre Baskerville';
-    font-size: 25px;
+    font-size: 30px;
     color: white;
     margin: 5px;
 }
@@ -38,43 +54,41 @@
     margin: 5px;
 }
 
-@media (max-width: 980px) {
-    .h1 {
-        font-size: 90px;
-    }
-}
-
-@media (max-width: 700px) {
-    .h1 {
-        font-size: 80px;
-    }
-}
-
-@media (max-width: 300px) {
-    .h1 {
-        font-size: 50px;
-    }
-}
-
 .h3 {
     font-family: 'Libre Baskerville';  
     font-size: 16px;
+    text-align: center;
     color: white;
     margin: 5px;
 }
 
+@media (max-width: 750px) {
+    .h1 {font-size: 80px;}
+    .h2 {font-size: 24px;}
+    .h3 {font-size: 14px;}
+}
+
+@media (max-width: 600px) {
+    .h1 {font-size: 60px;}
+    .h2 {font-size: 20px;}
+    .h3 {font-size: 12px;}
+}
+
 .button {
-    font-size: 20px;;
+    font-size: 18px;
+    font-family: 'Libre Baskerville';
     color: white;
     padding: 10px;
     border-radius: 50px;
+    border-color: #333149;
+    border-width: 1px;
     backdrop-filter: blur(20px);
     margin: 10px;
     transition: box-shadow 0.25s ease-in-out, transform 0.1s ease-in-out;
 }
 
 .button:hover {
-    box-shadow: 0 0 15px #ffffff; 
+    box-shadow: 0 0 15px #f4a942; 
 }
 
 .button:active {

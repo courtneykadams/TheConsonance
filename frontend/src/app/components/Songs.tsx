@@ -13,6 +13,9 @@ export default function Songs({ songs }: { songs: Song[] }) {
     const returnHome = () => {
         router.push('./');
     }
+    const searchAgain = () => {
+        router.push('./ChordPage');
+    }
     
     return (
         <div className={style.bg}>
@@ -27,8 +30,10 @@ export default function Songs({ songs }: { songs: Song[] }) {
             ) : (
                 <p>No songs found based on the chord progression.</p>
             )}
-            <button onClick={returnHome} className={style.button}>Home</button>
-
+            <div className={style.buttons}>
+                <button onClick={returnHome} className={style.button}>Home</button>
+                <button onClick={searchAgain} className={style.button}>Search Again</button>
+            </div>
         </div>
 
     );

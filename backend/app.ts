@@ -1,6 +1,7 @@
 import { GoogleGenerativeAI, GenerateContentResult } from "@google/generative-ai";
 import dotenv from 'dotenv';
 import express, { Request, Response } from "express";
+import cors from "cors";
 
 dotenv.config();
 
@@ -11,7 +12,9 @@ if (!process.env.GEMINI_API_KEY) {
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 const generationConfig = { temperature: 0.9, topP: 1, topK: 1, maxOutputTokens: 4096 };
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3001;
+
+app.use(cors()); // Enable CORS for all requests
 
 // Enable JSON parsing
 app.use(express.json());

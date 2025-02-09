@@ -2,32 +2,23 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    margin-top: 50px;
 }
 
 .h1 {
     text-align: center;
     font-family: 'Libre Baskerville';
-    font-weight: 700;
-    font-size: 50px;
+    font-size: 30px;
     color: white;
     margin: 5px;
 }
 
 .chords {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: stretch;
-}
-
-.chord {
-    flex: 1;
-    width: 100px;
-    backdrop-filter: blur(20px);
-    color: rgb(0, 0, 0);
-    margin: 10px;
-    border-radius: 15px;
-    font-size: 20px;
+    font-size: 100px;
+    color: white;
+    font-family: 'Libre Baskerville';
+    border-radius: 25px;
     padding: 10px;
 }
 
@@ -36,18 +27,41 @@
     font-size: 20px;
     color: white;
     border-radius: 25px;
-    border-color: #6f6996;
+    border-color: #333149;
     border-width: 1px;
     padding: 10px;
-    margin: 10px;
-    margin: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin: 20px;
     transition: box-shadow 0.25s ease-in-out, transform 0.1s ease-in-out;
 }
 
 .button:hover {
-    box-shadow: 0 0 15px #ffffff; 
+    box-shadow: 0 0 15px #f4a942; 
 }
 
 .button:active {
+    transform: scale(0.95);
+}
+
+.homeButton {
+    backdrop-filter: blur(20px);
+    font-size: 12px;
+    color: white;
+    border-radius: 25px;
+    border-color: #333149;
+    border-width: 1px;
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin: 20px;
+    transition: box-shadow 0.25s ease-in-out, transform 0.1s ease-in-out;
+}
+
+.homeButton:hover {
+    box-shadow: 0 0 15px #f4a942; 
+}
+
+.homeButton:active {
     transform: scale(0.95);
 }
