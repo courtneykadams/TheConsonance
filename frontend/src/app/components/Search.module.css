@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=search');
 
+.searchSection {
+    display: flex;
+    width: 100%;
+}
+
 .search {
     width: 100%;
     display: flex;
@@ -12,7 +17,7 @@
   }
   
   .search:focus-within {
-    box-shadow: 0 0 2px rgba(0, 0, 0, 0.75);
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.85);
   }
   
   .searchIcon {
@@ -36,4 +41,25 @@
     border: none;
     background: transparent;
     width: 100%;
-  }
+}
+
+.button {
+  font-family: "Libre Baskerville", serif;
+  backdrop-filter: blur(20px);
+  font-size: 20px;
+  color: rgb(255, 255, 255);
+  border-radius: 25px;
+  border-color: #3d3a52;
+  border-width: 1px;
+  padding: 10px;
+  margin: 10px;
+  transition: box-shadow 0.25s ease-in-out, transform 0.1s ease-in-out;
+}
+
+.button:hover {
+  box-shadow: 0 0 15px #ffffff; 
+}
+
+.button:active {
+  transform: scale(0.95);
+}
