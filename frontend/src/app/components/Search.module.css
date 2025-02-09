@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=search');
+
+.search {
+    width: 100%;
+    display: flex;
+    padding: 8px;
+    margin: 10px;
+    border-radius: 28px;
+    background-color: #eeeeee;
+    transition: box-shadow 0.25s;
+    box-sizing: border-box;
+  }
+  
+  .search:focus-within {
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.75);
+  }
+  
+  .searchIcon {
+    font-family: 'Material Symbols Outlined', sans-serif;
+    font-weight: 400;
+    font-size: 24px;
+    display: inline-block;
+    margin-left: 10px;
+  }
+  
+  .searchIcon::placeholder, .searchIcon {
+    color: rgba(0, 0, 0, 0.25);
+  }
+
+.searchBar {
+    font-size: 14px;
+    font-family: "Libre Baskerville", serif;
+    color: #555;
+    margin-left: 8px;
+    outline: none;
+    border: none;
+    background: transparent;
+    width: 100%;
+  }
