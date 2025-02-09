@@ -14,20 +14,11 @@
 }
 
 .chords {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: stretch;
-}
-
-.chord {
-    flex: 1;
-    width: 100px;
+    font-size: 50px;
+    color: white;
+    font-family: 'Libre Baskerville';
     backdrop-filter: blur(20px);
-    color: rgb(0, 0, 0);
-    margin: 10px;
-    border-radius: 15px;
-    font-size: 20px;
+    border-radius: 25px;
     padding: 10px;
 }
 
@@ -49,5 +40,26 @@
 }
 
 .button:active {
+    transform: scale(0.95);
+}
+
+.homeButton {
+    backdrop-filter: blur(20px);
+    font-size: 14px;
+    color: white;
+    border-radius: 25px;
+    border-color: #6f6996;
+    border-width: 1px;
+    padding: 10px;
+    margin: 10px;
+    margin: 10px;
+    transition: box-shadow 0.25s ease-in-out, transform 0.1s ease-in-out;
+}
+
+.homeButton:hover {
+    box-shadow: 0 0 15px #ffffff; 
+}
+
+.homeButton:active {
     transform: scale(0.95);
 }

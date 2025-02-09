@@ -3,36 +3,38 @@ import style from "./Chords.module.css";
 import { useRouter } from "next/navigation";
 import React, { useState, useEffect } from "react";
 
-export default function Chords() {
+interface ChordsProps {
+    chordProgression: string;
+}
+
+export default function Chords({ chordProgression }: ChordsProps) {
+
     const router = useRouter();
 
-    const [chords, setChords] = useState(["", "", "", ""]);
     const [songs, setSongs] = useState<any[]>([]);
-        
-    const handleInputChange = (index: number, value: string) => {
-        const newChords = [...chords];
-        newChords[index] = value;
-        setChords(newChords);
-    };
 
-    useEffect(() => {
-        console.log("Updated Chords:", chords);
-    }, [chords]);
+    const lines = chordProgression ? chordProgression.split("\n") : [];
+    const romanNumerals = lines[0] || "No chord progression generated yet.";
+    const badNumbers = lines[1] || "";
+    const numbers = badNumbers.replace(/\s+/g, '').trim(); // Remove whitespace and trim
+
+
 
     const makePlaylist = async () => {
+        if (!numbers) {
+            console.error("No number progression available to create a playlist.");
+            return;
+        }
+        if (!/^\d+(,\d+)*$/.test(numbers)) {
+            console.error("Invalid number progression.");
+            return;
+        }
+        const requestUrl = `/api/hooktheory?cp=${encodeURIComponent(numbers)}`;
+        console.log("Fetching from:", requestUrl);
         try {
-            const chordQuery = chords
-            .filter(chord => chord.trim() !== "") // Remove empty inputs
-            .join(",");
-
-            if (!chordQuery) {
-                console.error("Please enter at least one chord!"); // Use console directly
-                return;
-            }
-
             // Send GET request with chords as query parameter
-            const response = await fetch(`/api/hooktheory?cp=${encodeURIComponent(chordQuery)}`);
-
+            const response = await fetch(requestUrl);
+            
             if (!response.ok) throw new Error("Failed to fetch data from API");
 
             const data = await response.json();
@@ -50,22 +52,18 @@ export default function Chords() {
         }
     };
 
+    const returnHome = () => {
+        router.push('./');
+    }
+
     return (
         <div className={style.bg}>
             <h1 className={style.h1}>Your Chord Progression:</h1>
             <div className={style.chords}>
-                {chords.map((chord, index) => (
-                    <input
-                        key={index}
-                        type="text"
-                        placeholder="chord"
-                        className={style.chord}
-                        value={chord}
-                        onChange={(e) => handleInputChange(index, e.target.value)}
-                    />
-                ))}
+                <p>{romanNumerals}</p>
             </div>
             <button onClick={makePlaylist} className={style.button}>Make my Playlist</button>
+            <button onClick={returnHome} className={style.homeButton}>Home</button>
         </div>
     );
 }
