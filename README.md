@@ -109,6 +109,9 @@ TheConsonance/
 2. Create a new branch for your feature
 3. Submit a pull request with a description of your changes
 
+## Challenges we ran into
+The learning curve was massive as we were not the most familiar with typescript and express.js for the backend. Small amounts of experience with react, node.js, html, and AI.
+
 ## License
 
 See the [LICENSE](LICENSE) file for details.
