@@ -8,7 +8,7 @@ export default function ChordPage() {
   const [chordProgression, setChordProgression] = useState("");
   return(
     <div className={style.chordPage}>
-        <h1 className={style.text}>Let's get started</h1>
+        <h1 className={style.text}>Let's get started!</h1>
         <Search setChordProgression={setChordProgression}/>
         <Chords chordProgression={chordProgression}/>
     </div>

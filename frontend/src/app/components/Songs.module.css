@@ -9,7 +9,6 @@
 .songs {
     display: flex;
     flex-direction: column;
-    backdrop-filter: blur(20px);
     border-radius: 25px;  
     padding: 15px;
     text-align: center;
@@ -32,6 +31,8 @@
     font-size: 20px;
     color: white;
     border-radius: 25px;
+    border-color: #333149;
+    border-width: 1px;
     padding: 10px;
     padding-left: 20px;
     padding-right: 20px;
@@ -40,7 +41,7 @@
 }
 
 .button:hover {
-    box-shadow: 0 0 15px #ffffff; 
+    box-shadow: 0 0 15px #f4a942; 
 }
 
 .button:active {

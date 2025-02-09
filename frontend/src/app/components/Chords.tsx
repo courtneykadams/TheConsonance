@@ -60,7 +60,9 @@ export default function Chords({ chordProgression }: ChordsProps) {
         <div className={style.bg}>
             <h1 className={style.h1}>Your Chord Progression:</h1>
             <div className={style.chords}>
-                <p>{romanNumerals}</p>
+                <p style={{ fontSize: romanNumerals === "No chord progression generated yet." ? '20px' : '100px' }}>
+                    {romanNumerals}
+                </p>
             </div>
             <button onClick={makePlaylist} className={style.button}>Make my Playlist</button>
             <button onClick={returnHome} className={style.homeButton}>Home</button>

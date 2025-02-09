@@ -17,7 +17,7 @@
   }
   
   .search:focus-within {
-    box-shadow: 0 0 40px rgba(0, 0, 0, 0.85);
+    box-shadow: 0 0 30px rgba(138, 135, 187, 0.85);
   }
   
   .searchIcon {
@@ -46,10 +46,10 @@
 .button {
   font-family: "Libre Baskerville", serif;
   backdrop-filter: blur(20px);
-  font-size: 20px;
+  font-size: 16px;
   color: rgb(255, 255, 255);
   border-radius: 25px;
-  border-color: #3d3a52;
+  border-color: #333149;
   border-width: 1px;
   padding: 10px;
   margin: 10px;
@@ -57,7 +57,7 @@
 }
 
 .button:hover {
-  box-shadow: 0 0 15px #ffffff; 
+  box-shadow: 0 0 15px #f4a942; 
 }
 
 .button:active {
